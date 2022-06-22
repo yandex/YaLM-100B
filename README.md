@@ -1,3 +1,4 @@
+# YaLM 100B
 **YaLM 100B** is a GPT-like neural network for generating and processing text. It can be used freely by developers and researchers from all over the world.
 
 The model leverages 100 billion parameters. It took 65 days to train the model on a cluster of 800 A100 graphics cards and 1.7 TB of online texts, books, and countless other sources in both English and Russian.
