@@ -31,3 +31,37 @@ You can start with the following scripts:
 ## License
 
 The model is published under the Apache 2.0 license that permits both research and commercial use, Megatron-LM is licensed under the [Megatron-LM license](megatron_lm/LICENSE).
+
+## Training details
+
+### Dataset composition
+
+Dataset used for the training of YaLM-100B is comprised of the following parts (rough percentages are measured in tokens seen by the model)
+
+* **25%** [The Pile](https://pile.eleuther.ai/) — open English dataset by Eleuther AI team
+
+* **75%** Texts in Russian collected by our team (percentages  of the whole dataset are given) 
+
+    * 49% Russian web pages from Yandex Search index filtered from ~100Tb to ~1Tb by the following heuristics:
+      1. LSH Deduplication — clusters of similar texts were truncated to just one text each
+      2. Length filtration — too short or too long texts or texts with too few natural sentences were discarded.
+      3. Entropy filtration — texts with too high or too low entropy were discarded
+      4. Domain filtration — domains with repetitive texts (like online retail) were discarded
+      5. Classifier filtration — dataset of good texts was collected in a manner similar to WebText from pages linked in tweets in Russian that have at least one reply. Then a classifier was trained to distinguish those good texts from random pages from the dataset. Texts from the original crawled dataset with low classifier scores were then discarded
+    
+    * 12% News from various sources from Yandex Search index
+    
+    * 10% Books from the dataset used in [Russian Distributional Thesarus](https://russe.nlpub.org/downloads/)
+    
+    * 3% Misc texts from the [Taiga Dataset](https://tatianashavrina.github.io/taiga_site/)
+    
+    * 1.5% Dialogues from social media preprocessed in a manner similar to how Reddit is proccessed in The Pile
+    
+    * 0.5% Russian portion of Wikipedia
+
+Some subsets were traversed up to 3 times during the training.
+
+
+### Training process
+
+Model was trained on a cluster of 800 A100 for ~65 days. In that time it consumed 300B tokens. You can see TensorBoard with LR and ramp up schedule, training metrics and our "thermometers" on the [HF page](https://huggingface.co/yandex/yalm-100b).
