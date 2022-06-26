@@ -5,6 +5,8 @@ The model leverages 100 billion parameters. It took 65 days to train the model o
 
 Training details and best practices on acceleration and stabilizations can be found on **[Medium](https://medium.com/p/d1df53d0e9a6)** (English) and **[Habr](https://habr.com/ru/company/yandex/blog/672396/)** (Russian) articles.
 
+We used DeepSpeed to train the model and drew inspiration from Megatron-LM example. However, the code in this repo is not the same code that was used to train the model. Rather it is stock example from DeepSpeed repo with minimal changes needed to infer our model.
+
 ## Setup
 
 Make sure to have 200GB of free disk space before downloading weights. The model *(code is based on [microsoft/DeepSpeedExamples/Megatron-LM-v1.1.5-ZeRO3](https://github.com/microsoft/DeepSpeedExamples/tree/068e6561188e9192104e014f70fbe25224b5eb62/Megatron-LM-v1.1.5-ZeRO3))* is supposed to run on multiple GPUs with tensor parallelism. It was tested on 4 (A100 80g) and 8 (V100 32g) GPUs, but is able to work with different configurations with ≈200GB of GPU memory in total which divide weight dimensions correctly (e.g. 16, 64, 128).
