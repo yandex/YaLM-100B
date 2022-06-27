@@ -18,7 +18,7 @@ UNCOND_ARGS="\
 GEN_ARGS="
     --temperature 1.0 \
     --top_p 0.9 \
-    --seed 1234 \
+    --seed 42 \
     --seq-length 512 \
     --out-seq-length 512"
 
