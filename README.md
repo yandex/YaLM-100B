@@ -15,6 +15,7 @@ Make sure to have 200GB of free disk space before downloading weights. The model
 
 * Run `bash download/download.sh` to download model weights and vocabulary.
 * By default, weights will be downloaded to `./yalm100b_checkpoint/weights/`, and vocabulary will be downloaded to `./yalm100b_checkpoint/vocab/`.
+* As another option, you can [clone our HF repo](https://huggingface.co/yandex/yalm-100b/tree/main) and [pull the checkpoint](https://huggingface.co/yandex/yalm-100b/tree/main/yalm100b_checkpoint).
 
 ### Docker
 
@@ -38,7 +39,7 @@ The model is published under the Apache 2.0 license that permits both research a
 
 ### Dataset composition
 
-Dataset used for the training of YaLM-100B is comprised of the following parts (rough percentages are measured in tokens seen by the model)
+Dataset used for the training of YaLM-100B is comprised of the following parts (rough percentages are measured in tokens seen by the model):
 
 * **25%** [The Pile](https://pile.eleuther.ai/) — open English dataset by Eleuther AI team
 
@@ -66,4 +67,4 @@ Some subsets were traversed up to 3 times during the training.
 
 ### Training process
 
-Model was trained on a cluster of 800 A100 for ~65 days. In that time it consumed 300B tokens. You can see TensorBoard with LR and ramp up schedule, training metrics and our "thermometers" on the [HF page](https://huggingface.co/yandex/yalm-100b).
+Model was trained on a cluster of 800 A100 for ~65 days. In that time it consumed 300B tokens. You can see [TensorBoard](https://huggingface.co/yandex/yalm-100b/tensorboard) with LR and ramp up schedule, training metrics and our "thermometers" on the [HF page](https://huggingface.co/yandex/yalm-100b).
