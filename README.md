@@ -58,7 +58,7 @@ Dataset used for the training of YaLM-100B is comprised of the following parts (
     
     * 3% Misc texts from the [Taiga Dataset](https://tatianashavrina.github.io/taiga_site/)
     
-    * 1.5% Dialogues from social media preprocessed in a manner similar to how Reddit is proccessed in The Pile
+    * 1.5% Dialogues from social media preprocessed in a manner similar to how Reddit is processed in The Pile
     
     * 0.5% Russian portion of Wikipedia
 
