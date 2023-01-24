@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Khrushchev"
+  given-names: "Mikhail"
+- family-names: "Vasilev"
+  given-names: "Ruslan"
+- family-names: "Petrov"
+  given-names: "Alexey"
+- family-names: "Zinov"
+  given-names: "Nikolay"
+title: "YaLM 100B"
+date-released: 2022-06-23
+url: "https://github.com/yandex/YaLM-100B"
